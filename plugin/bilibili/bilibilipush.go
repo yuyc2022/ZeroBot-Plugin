@@ -457,6 +457,7 @@ func sendLive(ctx *zero.Ctx) error {
 					lCover = value.Get("keyframe").String()
 				}
 				var msg []message.MessageSegment
+				msg = append(msg, message.AtAll())
 				msg = append(msg, message.Text(lName+" 正在直播：\n"))
 				msg = append(msg, message.Text(lTitle))
 				msg = append(msg, message.Image(lCover))
